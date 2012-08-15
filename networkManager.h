@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reachability.h"
 
 @protocol NetworkManagerDelegate <NSObject>
 
@@ -16,7 +17,7 @@
 @end
 
 @interface NetworkManager : NSObject{
-    NSObject<NetworkManagerDelegate>* delegate;
+    __weak NSObject<NetworkManagerDelegate>* delegate;
 }
 
 - (id)initWithDelegate:(NSObject<NetworkManagerDelegate>*) del;

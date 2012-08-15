@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>twitter.com</key>
+	<dict>
+		<key>smallUserAgent</key>
+		<string>Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Kevin) Version/3.0 Mobile/1A543a Safari/419.3</string>
+	</dict>
+	<key>news.ycombinator.com</key>
+	<dict>
+		<key>injectingJS</key>
+		<string>document.querySelector(&apos;table&apos;).width=&apos;100%&apos;; document.querySelector(&apos;body&apos;).style.margin=0;</string>
+	</dict>
+	<key>quora.com</key>
+	<dict>
+		<key>injectingJS</key>
+		<string>var notifications = document.querySelectorAll(&quot;.inbox .count, .notifications .count&quot;);
+function wdShowNotification(){
+	var total = 0;
+	for (var i = 0; i &lt; notifications.length; i++){
+		total += parseInt(notifications[i].innerHTML);
+	}
+	if(total &gt; 0){
+		WebDaemon.postNotification(0);
+	}
+}
+wdShowNotification();
+setInterval(wdShowNotification, 10000);</string>
+	</dict>
+	<key>plus.google.com</key>
+	<dict>
+		<key>smallUserAgent</key>
+		<string>Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Kevin) Version/3.0 Mobile/1A543a Safari/419.3</string>
+		<key>injectingJS</key>
+		<string>var notifications = document.querySelector(&apos;a[href=&quot;/app/plus/x/?v=notifications&quot;]&apos;);
+function wdShowNotification(){
+	var total = parseInt(notifications.innerHTML);
+	if(total &gt; 0){
+		WebDaemon.postNotification(0);
+	}
+}
+wdShowNotification();
+setInterval(wdShowNotification, 10000);</string>
+	</dict>
+	<key>m.facebook.com</key>
+	<dict>
+		<key>injectingJS</key>
+		<string>var notifications = document.querySelectorAll(&quot;.jewel .count&quot;);
+function wdShowNotification(){
+	var total = 0;
+	for (var i = 0; i &lt; notifications.length; i++){
+		total += parseInt(notifications[i].innerHTML);
+	}
+	if(total &gt; 0){
+		WebDaemon.postNotification(0);
+	}
+}
+wdShowNotification();
+setInterval(wdShowNotification, 10000);</string>
+		<key>smallUserAgent</key>
+		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10</string>
+	</dict>
+</dict>
+</plist>

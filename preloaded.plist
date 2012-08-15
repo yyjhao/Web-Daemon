@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Google Plus</string>
+		<key>smallURL</key>
+		<string>http://plus.google.com/app/plus</string>
+		<key>wideURL</key>
+		<string>http://plus.google.com</string>
+		<key>autorefresh</key>
+		<false/>
+		<key>shouldSwitch</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>8tracks</string>
+		<key>smallURL</key>
+		<string>http://m.8tracks.com/</string>
+		<key>wideURL</key>
+		<string>http://8tracks.com/</string>
+		<key>autorefresh</key>
+		<false/>
+		<key>shouldSwitch</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Google Tasks</string>
+		<key>smallURL</key>
+		<string>http://mail.google.com/tasks/ig</string>
+		<key>wideURL</key>
+		<string>http://mail.google.com/tasks/canvas</string>
+		<key>autorefresh</key>
+		<false/>
+		<key>shouldSwitch</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>shouldSwitch</key>
+		<false/>
+		<key>autorefresh</key>
+		<true/>
+		<key>wideURL</key>
+		<string>http://twitter.com</string>
+		<key>smallURL</key>
+		<string>http://twitter.com</string>
+		<key>name</key>
+		<string>Twitter</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Hacker News</string>
+		<key>smallURL</key>
+		<string>http://news.ycombinator.com</string>
+		<key>wideURL</key>
+		<string>http://news.ycombinator.com</string>
+		<key>autorefresh</key>
+		<true/>
+		<key>shouldSwitch</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Facebook</string>
+		<key>smallURL</key>
+		<string>https://m.facebook.com</string>
+		<key>wideURL</key>
+		<string>https://www.facebook.com</string>
+		<key>autorefresh</key>
+		<true/>
+		<key>shouldSwitch</key>
+		<false/>
+	</dict>
+</array>
+</plist>

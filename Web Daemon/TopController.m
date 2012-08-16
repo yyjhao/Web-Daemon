@@ -123,7 +123,9 @@ void *kContextActivePanel = &kContextActivePanel;
     self.webpopController.hasActivePop = self.menuBarController.hasActiveIcon;
     if(self.menuBarController.hasActiveIcon){
         _notified = NO;
-        menuBarController.statusItemView.image = menuBarController.grayIcon;
+        if(menuBarController.statusItemView.image == menuBarController.notiIcon){
+            menuBarController.statusItemView.image = menuBarController.grayIcon;
+        }
     }
 }
 
@@ -146,6 +148,14 @@ void *kContextActivePanel = &kContextActivePanel;
             menuBarController.statusItemView.image = menuBarController.notiIcon;
             _notified = YES;
         }
+    }
+}
+
+-(void)updateStatus:(WebpopStatus)status{
+    if(status == loadError){
+        menuBarController.statusItemView.image = menuBarController.errorIcon;
+    }else{
+        menuBarController.statusItemView.image = menuBarController.grayIcon;
     }
 }
 

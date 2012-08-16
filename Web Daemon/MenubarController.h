@@ -21,5 +21,6 @@
 @property (nonatomic) NSImage* icon;
 @property NSImage* grayIcon;
 @property NSImage* notiIcon;
+@property NSImage* errorIcon;
 
 @end

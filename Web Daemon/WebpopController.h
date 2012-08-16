@@ -18,6 +18,11 @@
 #define CLOSE_DURATION .1
 #define RELOAD_INTERVAL 120
 
+typedef enum{
+    loadError,
+    loadOK
+} WebpopStatus;
+
 @interface WebPreferences (WebPreferencesPrivate)
 - (void)_setLocalStorageDatabasePath:(NSString *)path;
 - (void) setLocalStorageEnabled: (BOOL) localStorageEnabled;
@@ -33,6 +38,7 @@
 - (void)updateIcon:(NSImage*)icon;
 - (void)updateUsingWide:(BOOL)usingWide;
 - (WebView*)openNewWindow:(NSURLRequest*)request;
+- (void)updateStatus:(WebpopStatus)status;
 
 @end
 

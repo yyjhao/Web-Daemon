@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A081F41E15D9490600E897ED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A081F41D15D9490600E897ED /* Cocoa.framework */; };
+		A081F42815D9490600E897ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A081F42615D9490600E897ED /* InfoPlist.strings */; };
+		A081F42A15D9490600E897ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A081F42915D9490600E897ED /* main.m */; };
+		A081F42E15D9490600E897ED /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A081F42C15D9490600E897ED /* Credits.rtf */; };
+		A081F43115D9490600E897ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A081F43015D9490600E897ED /* AppDelegate.m */; };
+		A081F43415D9490700E897ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A081F43215D9490700E897ED /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A081F41915D9490600E897ED /* Webdaemon Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Webdaemon Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A081F41D15D9490600E897ED /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A081F42015D9490600E897ED /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A081F42115D9490600E897ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A081F42215D9490600E897ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A081F42515D9490600E897ED /* Webdaemon Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Webdaemon Helper-Info.plist"; sourceTree = "<group>"; };
+		A081F42715D9490600E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A081F42915D9490600E897ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A081F42B15D9490600E897ED /* Webdaemon Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Webdaemon Helper-Prefix.pch"; sourceTree = "<group>"; };
+		A081F42D15D9490600E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A081F42F15D9490600E897ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A081F43015D9490600E897ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A081F43315D9490700E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A097A15F15D9495800AC3B04 /* Webdaemon Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Webdaemon Helper.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A081F41615D9490600E897ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A081F41E15D9490600E897ED /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A081F40E15D9490600E897ED = {
+			isa = PBXGroup;
+			children = (
+				A081F42315D9490600E897ED /* Webdaemon Helper */,
+				A081F41C15D9490600E897ED /* Frameworks */,
+				A081F41A15D9490600E897ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A081F41A15D9490600E897ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A081F41915D9490600E897ED /* Webdaemon Helper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A081F41C15D9490600E897ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A081F41D15D9490600E897ED /* Cocoa.framework */,
+				A081F41F15D9490600E897ED /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A081F41F15D9490600E897ED /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A081F42015D9490600E897ED /* AppKit.framework */,
+				A081F42115D9490600E897ED /* CoreData.framework */,
+				A081F42215D9490600E897ED /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A081F42315D9490600E897ED /* Webdaemon Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A097A15F15D9495800AC3B04 /* Webdaemon Helper.entitlements */,
+				A081F42F15D9490600E897ED /* AppDelegate.h */,
+				A081F43015D9490600E897ED /* AppDelegate.m */,
+				A081F43215D9490700E897ED /* MainMenu.xib */,
+				A081F42415D9490600E897ED /* Supporting Files */,
+			);
+			path = "Webdaemon Helper";
+			sourceTree = "<group>";
+		};
+		A081F42415D9490600E897ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A081F42515D9490600E897ED /* Webdaemon Helper-Info.plist */,
+				A081F42615D9490600E897ED /* InfoPlist.strings */,
+				A081F42915D9490600E897ED /* main.m */,
+				A081F42B15D9490600E897ED /* Webdaemon Helper-Prefix.pch */,
+				A081F42C15D9490600E897ED /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A081F41815D9490600E897ED /* Webdaemon Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A081F43715D9490700E897ED /* Build configuration list for PBXNativeTarget "Webdaemon Helper" */;
+			buildPhases = (
+				A081F41515D9490600E897ED /* Sources */,
+				A081F41615D9490600E897ED /* Frameworks */,
+				A081F41715D9490600E897ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Webdaemon Helper";
+			productName = "Webdaemon Helper";
+			productReference = A081F41915D9490600E897ED /* Webdaemon Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A081F41015D9490600E897ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Yujian Yao";
+			};
+			buildConfigurationList = A081F41315D9490600E897ED /* Build configuration list for PBXProject "Webdaemon Helper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A081F40E15D9490600E897ED;
+			productRefGroup = A081F41A15D9490600E897ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A081F41815D9490600E897ED /* Webdaemon Helper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A081F41715D9490600E897ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A081F42815D9490600E897ED /* InfoPlist.strings in Resources */,
+				A081F42E15D9490600E897ED /* Credits.rtf in Resources */,
+				A081F43415D9490700E897ED /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A081F41515D9490600E897ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A081F42A15D9490600E897ED /* main.m in Sources */,
+				A081F43115D9490600E897ED /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A081F42615D9490600E897ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A081F42715D9490600E897ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A081F42C15D9490600E897ED /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A081F42D15D9490600E897ED /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A081F43215D9490700E897ED /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A081F43315D9490700E897ED /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A081F43515D9490700E897ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A081F43615D9490700E897ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A081F43815D9490700E897ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Webdaemon Helper/Webdaemon Helper.entitlements";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Webdaemon Helper/Webdaemon Helper-Prefix.pch";
+				INFOPLIST_FILE = "Webdaemon Helper/Webdaemon Helper-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A081F43915D9490700E897ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Webdaemon Helper/Webdaemon Helper.entitlements";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Webdaemon Helper/Webdaemon Helper-Prefix.pch";
+				INFOPLIST_FILE = "Webdaemon Helper/Webdaemon Helper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A081F41315D9490600E897ED /* Build configuration list for PBXProject "Webdaemon Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A081F43515D9490700E897ED /* Debug */,
+				A081F43615D9490700E897ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A081F43715D9490700E897ED /* Build configuration list for PBXNativeTarget "Webdaemon Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A081F43815D9490700E897ED /* Debug */,
+				A081F43915D9490700E897ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A081F41015D9490600E897ED /* Project object */;
+}

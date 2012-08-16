@@ -71,7 +71,7 @@
     [pref _setLocalStorageDatabasePath:storagePath];
     [pref setLocalStorageEnabled:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadInProgress:) name:WebViewProgressEstimateChangedNotification object:webView];
-    [self loadWebView];
+    //[self loadWebView];
     
     
 }
@@ -297,20 +297,20 @@
     if(1 - [webView estimatedProgress] < 0.01){
         [progressInd setHidden:YES];
         [titleLabel setStringValue:[webView mainFrameTitle]];
-    }else{
-        [progressInd setHidden:NO];
-        [titleLabel setStringValue:@"Loading..."];
     }
     [progressInd setDoubleValue: [webView estimatedProgress] * 100];
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-    [webView stringByEvaluatingJavaScriptFromString:@"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){elm.target='_blank'})"];
-    if(_injectingJS != nil && frame == [webView mainFrame]){
-        [webView stringByEvaluatingJavaScriptFromString:_injectingJS];
+    if(frame.dataSource.request.URL.host.length){
+        [webView stringByEvaluatingJavaScriptFromString:@"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){elm.target='_blank'})"];
+        if(_injectingJS != nil && frame == [webView mainFrame]){
+            [webView stringByEvaluatingJavaScriptFromString:_injectingJS];
+        }
+        [_delegate updateStatus:loadOK];
+        firstShown = YES;
     }
-    firstShown = YES;
 }
 
 - (void)startReloadTimer
@@ -347,6 +347,9 @@
 }
 
 - (void)loadWebView{
+    [progressInd setHidden:NO];
+    [titleLabel setStringValue:@"Loading..."];
+    [progressInd setDoubleValue:0];
     if(_usingWide && shouldReloadWhenSwitch)
     {
         [webView setCustomUserAgent:_wideUserAgent];
@@ -368,8 +371,15 @@
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
 {
-    if(frame == [webView mainFrame]){
-        [[webView mainFrame] loadHTMLString:[error localizedDescription] baseURL:nil];
+    [frame loadHTMLString:[NSString stringWithFormat:@"<head><title>Error</title><body><h2 class='wd-error-string'>%@</h1>", error.localizedDescription] baseURL:nil];
+    [_delegate updateStatus:loadError];
+}
+
+- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame
+{
+    if(error.code != -999){
+        [frame loadHTMLString:[NSString stringWithFormat:@"<head><title>Error</title><body><h2 class='wd-error-string'>%@</h1>", error.localizedDescription] baseURL:nil];
+        [_delegate updateStatus:loadError];
     }
 }
 

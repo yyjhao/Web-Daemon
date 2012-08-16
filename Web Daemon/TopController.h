@@ -29,5 +29,6 @@
 - (void)updateIcon:(NSImage*)icon;
 - (void)updateUsingWide:(BOOL)usingWide;
 - (WebView*)openNewWindow:(NSURLRequest *)request;
+- (void)updateStatus:(WebpopStatus)status;
 
 @end

@@ -1,3 +1,9 @@
 #og_head{
     display: none;
 }
+
+h2.wd-error-string{
+    font-family: sans-serif;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5), 0 -1px 0 rgba(0,0,0,0.5);
+    color: #555;
+}

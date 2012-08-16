@@ -45,6 +45,8 @@
     _statusItemView.image = _grayIcon;
     _notiIcon = [self filterImageToNoti:icon];
     [_notiIcon setSize:NSSizeFromString(@"16x16")];
+    _errorIcon = [self filterImageToError:icon];
+    [_errorIcon setSize:NSSizeFromString(@"16x16")];
 }
 
 - (void)setStatusItemViewTarget:(id)tar{
@@ -87,6 +89,39 @@
     
     [destImage addRepresentation:grayImageRep]; 
     return destImage; 
+}
+
+
+- (NSImage *)filterImageToError:(NSImage *)srcImage
+{
+    NSBitmapImageRep *srcImageRep = [NSBitmapImageRep
+                                     imageRepWithData:[srcImage TIFFRepresentation]];
+    
+    NSInteger w = [srcImageRep pixelsWide];
+    NSInteger h = [srcImageRep pixelsHigh];
+    int x, y;
+    
+    NSImage *destImage = [[NSImage alloc] initWithSize:NSMakeSize(w,h)];
+    
+    NSBitmapImageRep *grayImageRep = [srcImageRep copy];
+    
+    unsigned char *srcData = [srcImageRep bitmapData];
+    unsigned char *destData = [grayImageRep bitmapData];
+    unsigned char *p1, *p2;
+    int n = [srcImageRep bitsPerPixel] / 8;
+    
+    for ( y = 0; y < h; y++ ) {
+        for ( x = 0; x < w; x++ ) {
+            p1 = srcData + n * (y * w + x);
+            p2 = destData + n * (y * w + x);
+            
+            p2[1] = p2[2] = p2[0] = (unsigned char)rint( pow((p1[0] + p1[1] + p1[2]) / 3, 5) / pow( 255, 4));
+            p2[3] = p1[3] / 3;
+        }
+    }
+    
+    [destImage addRepresentation:grayImageRep];
+    return destImage;
 }
 
 - (NSImage *)filterImageToNoti:(NSImage *)srcImage

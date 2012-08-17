@@ -303,11 +303,9 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-    if(frame.dataSource.request.URL.host.length){
-        [webView stringByEvaluatingJavaScriptFromString:@"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){elm.target='_blank'})"];
-        if(_injectingJS != nil && frame == [webView mainFrame]){
-            [webView stringByEvaluatingJavaScriptFromString:_injectingJS];
-        }
+    if(frame == [webView mainFrame] && frame.dataSource.request.URL.host.length){
+        [webView stringByEvaluatingJavaScriptFromString:@"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}})"];
+        [webView stringByEvaluatingJavaScriptFromString:_injectingJS];
         [_delegate updateStatus:loadOK];
         firstShown = YES;
     }

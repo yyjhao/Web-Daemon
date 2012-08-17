@@ -81,6 +81,7 @@
 {
     color = [NSColor colorWithCalibratedHue:val.hueComponent saturation: pow(val.saturationComponent, 3) brightness: 1 - pow(1 - val.brightnessComponent, 3) alpha:FILL_OPACITY];
     strokeColor = [NSColor colorWithCalibratedHue:color.hueComponent saturation: pow(color.saturationComponent, 3) brightness: 1 - pow(1 - color.brightnessComponent, 3) alpha:FILL_OPACITY];
+    [self setNeedsDisplay:YES];
 }
 
 

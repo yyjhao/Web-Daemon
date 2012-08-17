@@ -205,8 +205,8 @@
                     [daemon.webpopController setValue:value forKey:attribute];
                 }
             }
-            [daemon.webpopController loadWebView];
         }
+        [daemon.webpopController loadWebView];
         [daemons setObject:daemon forKey:name];
     }else{
         [daemon updateWithConfig:config];

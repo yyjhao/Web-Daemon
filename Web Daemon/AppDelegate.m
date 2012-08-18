@@ -60,7 +60,7 @@
     _namePicker.delegate = self;
     _namePicker.dataSource = manager;
     _launchAtLoginBut.state = [self.launchAtLogin integerValue];
-    if(YES || manager.daemons.count == 0){
+    if(manager.daemons.count == 0){
         [NSApp activateIgnoringOtherApps: YES];
         [_window makeKeyAndOrderFront:self];
     }

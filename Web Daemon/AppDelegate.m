@@ -57,12 +57,13 @@
     [_instancesTable setTarget:self];
     [_instancesTable setRowHeight:24];
     [_instancesTable setDoubleAction:@selector(showEditor:)];
-    if(manager.daemons.count == 0){
-        [_window makeKeyAndOrderFront:self];
-    }
     _namePicker.delegate = self;
     _namePicker.dataSource = manager;
     _launchAtLoginBut.state = [self.launchAtLogin integerValue];
+    if(YES || manager.daemons.count == 0){
+        [NSApp activateIgnoringOtherApps: YES];
+        [_window makeKeyAndOrderFront:self];
+    }
 }
 
 - (void)matchName

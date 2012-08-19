@@ -28,7 +28,7 @@
 - (void)togglePanel:(id)sender;
 - (void)updateIcon:(NSImage*)icon;
 - (void)updateUsingWide:(BOOL)usingWide;
-- (WebView*)openNewWindow:(NSURLRequest *)request;
+- (WebView*)openNewWindow:(NSURLRequest *)request withHost:(NSString*)host;
 - (void)updateStatus:(WebpopStatus)status;
 
 @end

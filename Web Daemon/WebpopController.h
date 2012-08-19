@@ -37,7 +37,7 @@ typedef enum{
 - (StatusItemView *)statusItemViewForPanelController:(WebpopController *)controller;
 - (void)updateIcon:(NSImage*)icon;
 - (void)updateUsingWide:(BOOL)usingWide;
-- (WebView*)openNewWindow:(NSURLRequest*)request;
+- (WebView*)openNewWindow:(NSURLRequest*)request withHost:(NSString*)host;
 - (void)updateStatus:(WebpopStatus)status;
 
 @end
@@ -71,6 +71,7 @@ typedef enum{
 @property NSString* smallUserAgent;
 @property NSString* wideUserAgent;
 @property NSString* injectingJS;
+@property BOOL shouldReplaceHost;
 
 -(id)initWithDelegate:(id<WebpopControllerDelegate>)delegate;
 

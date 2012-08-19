@@ -50,9 +50,9 @@
     webpopController.usingWide = [[config objectForKey:@"usingWide"] boolValue];
 }
 
--(WebView*)openNewWindow:(NSURLRequest *)request
+-(WebView*)openNewWindow:(NSURLRequest *)request withHost:(NSString *)host
 {
-    return manager.webviewForOpeningNewWindow;
+    return [manager webViewForOpeningNewWindowWithHost:host];
 }
 
 

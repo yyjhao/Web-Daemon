@@ -38,7 +38,7 @@
             } 
         }
         specificSettings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"specific" ofType:@"plist"]];
-        specificAttributes = [NSArray arrayWithObjects:@"smallUserAgent", @"wideUserAgent", @"injectingJS", nil];
+        specificAttributes = [NSArray arrayWithObjects:@"smallUserAgent", @"wideUserAgent", @"injectingJS", @"shouldReplaceHost", nil];
         storedFile = [storagePath stringByAppendingPathComponent:@"configs.data"];
         configs = [NSKeyedUnarchiver unarchiveObjectWithFile:storedFile];
         if(configs == nil){
@@ -73,10 +73,22 @@
     return self;
 }
 
+- (WebView*)webViewForOpeningNewWindowWithHost:(NSString *)host
+{
+    tmpHost = host;
+    return _webviewForOpeningNewWindow;
+}
+
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener
 {
     [listener ignore];
-    [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    if(tmpHost){
+        NSURL* newURL = [NSURL URLWithString:[[request.URL absoluteString] stringByReplacingOccurrencesOfString:request.URL.host withString:tmpHost]];
+        NSLog(@"%@ %@ %@",newURL,request.URL, [[request.URL absoluteString] stringByReplacingOccurrencesOfString:request.URL.host withString:tmpHost]);
+        [[NSWorkspace sharedWorkspace] openURL:newURL];
+    }else{
+        [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    }
 }
 
 -(void)finalize

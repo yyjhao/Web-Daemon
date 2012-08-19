@@ -45,6 +45,8 @@ setInterval(wdShowNotification, 10000);</string>
 	</dict>
 	<key>m.facebook.com</key>
 	<dict>
+		<key>shouldReplaceHost</key>
+		<true/>
 		<key>injectingJS</key>
 		<string>var notifications = document.querySelectorAll(&quot;.jewel .count&quot;);
 function wdShowNotification(){

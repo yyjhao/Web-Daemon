@@ -33,6 +33,7 @@
         _usingWide = NO;
         _wideUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
         _smallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 like Mac OS X; en-us) AppleWebKit/534.6 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
+        _shouldReplaceHost = NO;
     }
     return self;
 }
@@ -101,7 +102,11 @@
 
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
 {
-    return [_delegate openNewWindow:request];
+    NSString* newHost = nil;
+    if(_shouldReplaceHost){
+        newHost = [[NSURL URLWithString: wideUrl] host];
+    }
+    return [_delegate openNewWindow:request withHost:newHost];
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener

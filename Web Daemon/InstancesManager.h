@@ -15,6 +15,7 @@
     NSArray* oriPreloadedSettings;
     NSDictionary* specificSettings;
     NSArray* specificAttributes;
+    NSString* tmpHost;
 }
 
 - (id)init;
@@ -27,6 +28,7 @@
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
 - (BOOL)updateIcon:(NSImage*)icon ofName:(NSString*)name;
 - (void)updateUsingWide:(BOOL)usingWide ofName:(NSString*)name;
+- (WebView*)webViewForOpeningNewWindowWithHost:(NSString*)host;
 
 @property (strong, nonatomic) NSMutableDictionary* configs;
 @property (strong, nonatomic) NSMutableDictionary* daemons;

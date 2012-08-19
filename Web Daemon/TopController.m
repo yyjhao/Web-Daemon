@@ -42,7 +42,7 @@
     
     NSImage* icon = [config objectForKey:@"icon"];
     if((id)icon == (id)[NSNull null]){
-        icon = [NSImage imageNamed:@"treb"];
+        icon = [NSImage imageNamed:@"wdori"];
     }
     [self setIcon:icon];
     

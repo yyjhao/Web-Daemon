@@ -23,7 +23,7 @@
     {
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_VIEW_WIDTH];
         _statusItemView = [[StatusItemView alloc] initWithStatusItem:_statusItem];
-        _icon = [NSImage imageNamed:@"treb"];
+        _icon = [NSImage imageNamed:@"wdori"];
         [_icon setSize:NSSizeFromString(@"16x16")];
         _statusItemView.alternateImage = _icon;
         //_grayIcon = [self filterImageToGray:_icon];

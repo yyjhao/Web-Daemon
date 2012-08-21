@@ -308,12 +308,7 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-    if(frame == [webView mainFrame] && frame.dataSource.request.URL.host.length){
-        [webView stringByEvaluatingJavaScriptFromString:@"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}})"];
-        [webView stringByEvaluatingJavaScriptFromString:_injectingJS];
-        [_delegate updateStatus:loadOK];
-        firstShown = YES;
-    }
+    
 }
 
 - (void)startReloadTimer
@@ -370,6 +365,11 @@
 - (void)webView:(WebView *)webView didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame
 {
     [windowObject setValue:bridge forKey:@"WebDaemon"];
+    if(frame == [webView mainFrame] && frame.dataSource.request.URL.host.length){
+        [webView stringByEvaluatingJavaScriptFromString: [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@}, false);", @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});",_injectingJS]];
+        [_delegate updateStatus:loadOK];
+        firstShown = YES;
+    }
 }
 
 - (void)webView:(WebView *)sender didFailLoadWithError:(NSError *)error forFrame:(WebFrame *)frame

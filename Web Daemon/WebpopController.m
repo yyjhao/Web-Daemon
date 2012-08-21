@@ -394,14 +394,14 @@
 
 
 - (IBAction)changeStyle:(id)sender {
-    if([NSEvent modifierFlags] &  NSCommandKeyMask){
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:wideUrl]];
-    }else{
-        self.usingWide = !self.usingWide;
-    }
+    self.usingWide = !self.usingWide;
 }
 
 - (IBAction)toHome:(id)sender {
     [self loadWebView];
+}
+
+- (IBAction)openOut:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:wideUrl]];
 }
 @end

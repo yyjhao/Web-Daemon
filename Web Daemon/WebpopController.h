@@ -60,6 +60,7 @@ typedef enum{
 
 - (IBAction)changeStyle:(id)sender;
 - (IBAction)toHome:(id)sender;
+- (IBAction)openOut:(id)sender;
 
 @property (retain) NSString* url;
 @property (retain) NSString* wideUrl;

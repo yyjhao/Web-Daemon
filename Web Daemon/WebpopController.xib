@@ -57,7 +57,6 @@
 							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{17, 403}, {297, 27}}</string>
 							<reference key="NSSuperview" ref="868438874"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="414863331"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
@@ -115,7 +114,6 @@
 							</set>
 							<string key="NSFrame">{{0, 36}, {331, 366}}</string>
 							<reference key="NSSuperview" ref="868438874"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<bool key="NSViewCanDrawConcurrently">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -138,7 +136,6 @@
 							<array class="NSMutableArray" key="NSSubviews"/>
 							<string key="NSFrame">{{3, 2}, {31, 32}}</string>
 							<reference key="NSSuperview" ref="868438874"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="611096463"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -172,7 +169,6 @@
 							<array class="NSMutableArray" key="NSSubviews"/>
 							<string key="NSFrame">{{296, 2}, {31, 32}}</string>
 							<reference key="NSSuperview" ref="868438874"/>
-							<reference key="NSWindow"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1043969968">
@@ -195,13 +191,41 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
+						<object class="NSButton" id="684467734">
+							<reference key="NSNextResponder" ref="868438874"/>
+							<int key="NSvFlags">289</int>
+							<array class="NSMutableArray" key="NSSubviews"/>
+							<string key="NSFrame">{{264, 2}, {31, 32}}</string>
+							<reference key="NSSuperview" ref="868438874"/>
+							<reference key="NSNextKeyView" ref="362080224"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="641742272">
+								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags2">134217728</int>
+								<string key="NSContents"/>
+								<reference key="NSSupport" ref="864140341"/>
+								<string key="NSCellIdentifier">_NS:9</string>
+								<reference key="NSControlView" ref="684467734"/>
+								<int key="NSButtonFlags">-2033958912</int>
+								<int key="NSButtonFlags2">130</int>
+								<object class="NSCustomResource" key="NSNormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">NSIconViewTemplate</string>
+								</object>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">400</int>
+								<int key="NSPeriodicInterval">75</int>
+							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						</object>
 						<object class="NSProgressIndicator" id="611096463">
 							<reference key="NSNextResponder" ref="868438874"/>
 							<int key="NSvFlags">290</int>
-							<string key="NSFrame">{{38, 8}, {254, 20}}</string>
+							<string key="NSFrame">{{38, 8}, {222, 20}}</string>
 							<reference key="NSSuperview" ref="868438874"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="362080224"/>
+							<reference key="NSNextKeyView" ref="684467734"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSHuggingPriority">{250, 250}</string>
 							<int key="NSpiFlags">24589</int>
@@ -210,7 +234,6 @@
 					</array>
 					<string key="NSFrameSize">{331, 450}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="207757993"/>
 					<string key="NSReuseIdentifierKey">_NS:21</string>
 				</object>
@@ -296,6 +319,14 @@
 					<int key="connectionID">99</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openOut:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="684467734"/>
+					</object>
+					<int key="connectionID">263</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="547720113"/>
@@ -347,6 +378,7 @@
 							<reference ref="611096463"/>
 							<reference ref="362080224"/>
 							<reference ref="414863331"/>
+							<reference ref="684467734"/>
 						</array>
 						<reference key="parent" ref="547720113"/>
 					</object>
@@ -401,6 +433,19 @@
 						<reference key="object" ref="312106986"/>
 						<reference key="parent" ref="207757993"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">260</int>
+						<reference key="object" ref="684467734"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="641742272"/>
+						</array>
+						<reference key="parent" ref="868438874"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">261</int>
+						<reference key="object" ref="641742272"/>
+						<reference key="parent" ref="684467734"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -413,6 +458,8 @@
 				<real value="0.0" key="14.IBViewIntegration.shadowOffsetHeight"/>
 				<real value="0.0" key="14.IBViewIntegration.shadowOffsetWidth"/>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="260.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="261.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="39.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -432,103 +479,16 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">259</int>
+			<int key="maxID">263</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">Panel</string>
-					<string key="superclassName">NSPanel</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/Panel.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">PopView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PopView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">WebView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">reloadFromOrigin:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">reloadFromOrigin:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">reloadFromOrigin:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/WebView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">WebpopController</string>
-					<string key="superclassName">NSWindowController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="changeStyle:">id</string>
-						<string key="toHome:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="changeStyle:">
-							<string key="name">changeStyle:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toHome:">
-							<string key="name">toHome:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="enlargeBut">NSButton</string>
-						<string key="popView">PopView</string>
-						<string key="progressInd">NSProgressIndicator</string>
-						<string key="titleLabel">NSTextField</string>
-						<string key="webView">WebView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="enlargeBut">
-							<string key="name">enlargeBut</string>
-							<string key="candidateClassName">NSButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="popView">
-							<string key="name">popView</string>
-							<string key="candidateClassName">PopView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="progressInd">
-							<string key="name">progressInd</string>
-							<string key="candidateClassName">NSProgressIndicator</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="titleLabel">
-							<string key="name">titleLabel</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="webView">
-							<string key="name">webView</string>
-							<string key="candidateClassName">WebView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/WebpopController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSEnterFullScreenTemplate">{16, 15}</string>
+			<string key="NSIconViewTemplate">{11, 10}</string>
 			<string key="home_icon">{512, 512}</string>
 		</dictionary>
 	</data>

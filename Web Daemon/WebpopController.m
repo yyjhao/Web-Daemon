@@ -331,6 +331,7 @@
     if(au){
         [self startReloadTimer];
     }else{
+        [self stopReloadTimer];
         toReload = NO;
     }
 }

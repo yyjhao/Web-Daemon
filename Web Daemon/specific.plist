@@ -15,9 +15,9 @@
 	<key>quora.com</key>
 	<dict>
 		<key>injectingJS</key>
-		<string>var notifications = document.querySelectorAll(&quot;.inbox .count, .notifications .count&quot;);
+		<string>
 function wdShowNotification(){
-	var total = 0;
+	var total = 0;var notifications = document.querySelectorAll(&quot;.inbox .count, .notifications .count&quot;);
 	for (var i = 0; i &lt; notifications.length; i++){
 		total += parseInt(notifications[i].innerHTML);
 	}
@@ -48,18 +48,18 @@ setInterval(wdShowNotification, 10000);</string>
 		<key>shouldReplaceHost</key>
 		<true/>
 		<key>injectingJS</key>
-		<string>var notifications = document.querySelectorAll(&quot;.jewel .count&quot;);
+		<string>window.notificationSet = true;
 function wdShowNotification(){
-	var total = 0;
+	var total = 0;var notifications = document.querySelectorAll(&quot;.jewel .count&quot;);
 	for (var i = 0; i &lt; notifications.length; i++){
 		total += parseInt(notifications[i].innerHTML);
 	}
 	if(total &gt; 0){
-		WebDaemon.postNotification(0);
+		WebDaemon.postNotification(0);console.log(&apos;posted&apos;);window.scrollTo(0,0);
 	}
 }
 wdShowNotification();
-setInterval(wdShowNotification, 10000);</string>
+setInterval(wdShowNotification, 10000);window.eh=notifications;</string>
 		<key>smallUserAgent</key>
 		<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10</string>
 	</dict>

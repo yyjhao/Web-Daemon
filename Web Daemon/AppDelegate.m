@@ -157,6 +157,8 @@
     [_createBut setTitle:@"Create"];
     [_createBut setEnabled:NO];
     [_namePicker setEnabled:YES];
+    [_switchPageBox setState: NSOffState];
+    [_autoRefreshBox setState: NSOffState];
     usingEditor = NO;
     [NSApp beginSheet:_creatorSheet modalForWindow:_window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
@@ -171,7 +173,11 @@
     [_instancesTable dataSource];
 }
 
-- (IBAction)applyCreator:(id)sender {    
+- (IBAction)applyCreator:(id)sender {
+    id img = _iconView.image;
+    if(img == nil){
+        img = [NSNull null];
+    }
     if(usingEditor){
         NSString* name = [editingConfig objectForKey:@"name"];
         if(![name isEqualToString:_namePicker.stringValue]){
@@ -185,7 +191,7 @@
         }
         [editingConfig setObject:_smallURLField.stringValue forKey:@"smallURL"];
         [editingConfig setObject:_wideURLField.stringValue forKey:@"wideURL"];
-        [editingConfig setObject:_iconView.image forKey:@"icon"];
+        [editingConfig setObject:img forKey:@"icon"];
         [editingConfig setObject:[NSNumber numberWithBool:_autoRefreshBox.state == NSOnState] forKey:@"autoReload"];
         [editingConfig setObject:[NSNumber numberWithBool:_switchPageBox.state == NSOnState] forKey:@"shouldReloadWhenSwitch"];
         [manager updateInstance:_namePicker.stringValue];
@@ -195,10 +201,6 @@
             [alert setMessageText:@"The name is already used. You should pick a unique name."];
             [alert runModal];
             return;
-        }
-        id img = _iconView.image;
-        if(img == nil){
-            img = [NSNull null];
         }
         NSMutableDictionary* ins = [[NSMutableDictionary alloc] 
                                     initWithObjects: [[NSArray alloc] initWithObjects: 

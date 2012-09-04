@@ -37,7 +37,9 @@ setInterval(wdShowNotification, 10000);</string>
 function wdShowNotification(){
 	var total = parseInt(notifications.innerHTML);
 	if(total &gt; 0){
-		WebDaemon.postNotification(0);
+		WebDaemon.grabAttention();
+	}else{
+		WebDaemon.cancelAttention();
 	}
 }
 wdShowNotification();
@@ -55,7 +57,11 @@ function wdShowNotification(){
 		total += parseInt(notifications[i].innerHTML);
 	}
 	if(total &gt; 0){
-		WebDaemon.postNotification(0);console.log(&apos;posted&apos;);window.scrollTo(0,0);
+		WebDaemon.grabAttention();
+		console.log(&apos;posted&apos;);
+		window.scrollTo(0,0);
+	}else{
+		WebDaemon.cancelAttention();
 	}
 }
 wdShowNotification();

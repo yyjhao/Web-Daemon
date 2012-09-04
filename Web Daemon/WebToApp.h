@@ -15,14 +15,16 @@ typedef enum {
 
 @protocol WDNotificationHandler<NSObject>
 
--(void)postNotification:(WDNotificationType)type;
+-(void)grabAttention;
+-(void)cancelAttention;
 
 @end
 
 @interface WebToApp : NSObject
 
 -(id)initWithTop:(id<WDNotificationHandler>) top;
-- (void)postNotification:(WDNotificationType)type;
+- (void)grabAttention;
+- (void)cancelAttention;
 
 @property (weak) id<WDNotificationHandler> theTop;
 

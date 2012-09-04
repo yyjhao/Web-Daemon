@@ -99,6 +99,12 @@ void *kContextActivePanel = &kContextActivePanel;
     webpopController.popView.color = [NSColor colorWithDeviceRed:(double)r / count green:(double)g / count blue: (double)b / count alpha:1];
     
     menuBarController.icon = icon;
+    
+    _icon = icon;
+}
+
+- (NSImage*)icon{
+    return _icon;
 }
 
 - (void)updateUsingWide:(BOOL)usingWide
@@ -140,13 +146,20 @@ void *kContextActivePanel = &kContextActivePanel;
     return self.menuBarController.statusItemView;
 }
 
--(void)postNotification:(WDNotificationType)type
+-(void)grabAttention
 {
     if(!_notified && !self.menuBarController.hasActiveIcon){
-        if(type == WDImportantNotification){
-            [[NSSound soundNamed:@"Glass"] play];
-            menuBarController.statusItemView.image = menuBarController.notiIcon;
-            _notified = YES;
+        [[NSSound soundNamed:@"Glass"] play];
+        menuBarController.statusItemView.image = menuBarController.notiIcon;
+        _notified = YES;
+    }
+}
+
+-(void)cancelAttention{
+    if(_notified){
+        _notified = NO;
+        if(!self.menuBarController.hasActiveIcon){
+            menuBarController.statusItem.image = menuBarController.grayIcon;
         }
     }
 }

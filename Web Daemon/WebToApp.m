@@ -13,16 +13,18 @@
 
 +(NSString*)webScriptNameForSelector:(SEL)sel
 {
-    if(sel == @selector(postNotification:))
+    if(sel == @selector(grabAttention))
     {
-        return @"postNotification";
+        return @"grabAttention";
+    }else if(sel == @selector(cancelAttention)){
+        return @"cancelAttention";
     }
     return nil;
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
-    if(sel == @selector(postNotification:))
+    if(sel == @selector(grabAttention) || sel == @selector(cancelAttention))
     {
         return NO;
     }
@@ -37,9 +39,14 @@
     return self;
 }
 
-- (void)postNotification:(WDNotificationType)type
+- (void)grabAttention
 {
-    [_theTop postNotification:type];
+    [_theTop grabAttention];
+}
+
+- (void)cancelAttention
+{
+    [_theTop cancelAttention];
 }
 
 @end

@@ -14,7 +14,9 @@
 
 @class InstancesManager;
 
-@interface TopController : NSObject<WebpopControllerDelegate, WDNotificationHandler>
+@interface TopController : NSObject<WebpopControllerDelegate, WDNotificationHandler>{
+    NSImage* _icon;
+}
 
 -(id)initWithConfig:(NSMutableDictionary*)config;
 -(void)updateWithConfig:(NSMutableDictionary*)config;
@@ -24,11 +26,13 @@
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, weak) InstancesManager* manager;
 @property BOOL notified;
+@property (nonatomic) NSImage* icon;
 
 - (void)togglePanel:(id)sender;
 - (void)updateIcon:(NSImage*)icon;
 - (void)updateUsingWide:(BOOL)usingWide;
 - (WebView*)openNewWindow:(NSURLRequest *)request withHost:(NSString*)host;
 - (void)updateStatus:(WebpopStatus)status;
+- (NSImage*)icon;
 
 @end

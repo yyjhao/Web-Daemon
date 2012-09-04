@@ -88,16 +88,21 @@
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:message];
+    [alert setIcon:[_delegate icon]];
+    [alert setInformativeText:message];
+    [alert setMessageText:[NSString stringWithFormat:@"Web Daemon - %@", [webView mainFrameTitle]]];
     [alert runModal];
 }
 
 - (BOOL)webView:(WebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame {
-    NSInteger result = NSRunInformationalAlertPanel([NSString stringWithFormat:@"Web Daemon-%@", [webView mainFrameTitle]],  // title
-                                                    message,                // message
-                                                    NSLocalizedString(@"OK", @""),      // default button
-                                                    NSLocalizedString(@"Cancel", @""),    // alt button
-                                                    nil);
-    return NSAlertDefaultReturn == result;
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setInformativeText:message];
+    [alert setMessageText:[NSString stringWithFormat:@"Web Daemon - %@", [webView mainFrameTitle]]];
+    [alert setIcon:[_delegate icon]];
+    
+    return [alert runModal] == NSAlertFirstButtonReturn;
 }
 
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request

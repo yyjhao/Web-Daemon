@@ -39,6 +39,7 @@ typedef enum{
 - (void)updateUsingWide:(BOOL)usingWide;
 - (WebView*)openNewWindow:(NSURLRequest*)request withHost:(NSString*)host;
 - (void)updateStatus:(WebpopStatus)status;
+- (NSImage*)icon;
 
 @end
 

@@ -192,11 +192,11 @@
     NSMutableDictionary *config = [configs objectForKey:name];
     if(config){
         NSString* url = [config objectForKey:@"smallURL"];
-        if(![url hasPrefix:@"http://"] && (![url hasPrefix:@"https://"])){
+        if(![url hasPrefix:@"http://"] && (![url hasPrefix:@"https://"] && (![url hasPrefix:@"file://"]))){
             [config setValue:[NSString stringWithFormat:@"http://%@", url] forKey:@"smallURL"];
         }
         url = [config objectForKey:@"wideURL"];
-        if(![url hasPrefix:@"http://"] && (![url hasPrefix:@"https://"])){
+        if(![url hasPrefix:@"http://"] && (![url hasPrefix:@"https://"] && (![url hasPrefix:@"file://"]))){
             [config setValue:[NSString stringWithFormat:@"http://%@", url] forKey:@"wideURL"];
         }
     }

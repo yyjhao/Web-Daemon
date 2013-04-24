@@ -372,7 +372,7 @@
 {
     [windowObject setValue:bridge forKey:@"WebDaemon"];
     if(frame == [webView mainFrame] && frame.dataSource.request.URL.host.length){
-        [webView stringByEvaluatingJavaScriptFromString: [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@}, false);", @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});",_injectingJS]];
+        [webView stringByEvaluatingJavaScriptFromString: [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@}, false);", @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",_injectingJS]];
         [_delegate updateStatus:loadOK];
         firstShown = YES;
     }
@@ -395,6 +395,7 @@
 -(void)dealloc
 {
     NSLog(@"webpop is gone");
+    [[webView mainFrame] loadHTMLString: @"" baseURL: nil];
     [webView stopLoading:self];
 }
 

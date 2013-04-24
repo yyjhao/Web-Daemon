@@ -59,7 +59,7 @@ function wdShowNotification(){
 	if(total &gt; 0){
 		WebDaemon.grabAttention();
 		console.log(&apos;posted&apos;);
-		window.scrollTo(0,0);
+		
 	}else{
 		WebDaemon.cancelAttention();
 	}

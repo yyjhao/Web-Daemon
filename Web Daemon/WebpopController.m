@@ -8,10 +8,6 @@
 
 #import "WebpopController.h"
 
-@interface WebpopController ()
-
-@end
-
 @implementation WebpopController
 @synthesize popView;
 @synthesize titleLabel;
@@ -39,17 +35,12 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     return self;
 }
 
--(void)canConnect{
-    NSLog(@"adfadf");
-}
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     
     NSPanel *panel = (id)[self window];
     [panel setAcceptsMouseMovedEvents:YES];
-    //[panel setLevel:NSPopUpMenuWindowLevel];
     [panel setLevel:NSModalPanelWindowLevel];
     [panel setOpaque:NO];
     [panel setBackgroundColor:[NSColor clearColor]];
@@ -62,9 +53,8 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
                                         NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] :
-    NSTemporaryDirectory();
-    NSString* storagePath = [basePath stringByAppendingPathComponent:@"WebDaemon"];
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    NSString *storagePath = [basePath stringByAppendingPathComponent:@"WebDaemon"];
 
     WebPreferences* pref = [webView preferences];
     [pref setMinimumFontSize:12];
@@ -72,10 +62,11 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     [pref setUserStyleSheetLocation: [[NSBundle mainBundle] URLForResource:@"userstyle" withExtension:@"css"]];
     [pref _setLocalStorageDatabasePath:storagePath];
     [pref setLocalStorageEnabled:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadInProgress:) name:WebViewProgressEstimateChangedNotification object:webView];
-    //[self loadWebView];
-    
-    
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+        selector:@selector(loadInProgress:)
+        name:WebViewProgressEstimateChangedNotification
+        object:webView];
 }
 
 - (void)webView:(WebView *)sender didReceiveIcon:(NSImage *)image forFrame:(WebFrame *)frame
@@ -125,11 +116,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
         [listener use];
     }
 }
-
-/*- (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems
-{
-    return nil;
-}*/
 
 - (BOOL)hasActivePop
 {
@@ -219,7 +205,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     NSRect statusRect = [self statusrectForWindow:panel];
     
     NSRect panelRect = [panel frame];
-    //panelRect.size.width = PANEL_WIDTH;
     panelRect.origin.x = roundf(NSMidX(statusRect) - NSWidth(panelRect) / 2);
     panelRect.origin.y = NSMaxY(statusRect) - NSHeight(panelRect);
     
@@ -310,11 +295,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
         [titleLabel setStringValue:[webView mainFrameTitle]];
     }
     [progressInd setDoubleValue: [webView estimatedProgress] * 100];
-}
-
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
-{
-    
 }
 
 - (void)startReloadTimer

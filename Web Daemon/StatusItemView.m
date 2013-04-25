@@ -20,16 +20,11 @@
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
     return self;
 }
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    //[self.statusItem drawStatusBarBackgroundInRect:dirtyRect withHighlight:self.isHighlighted];
-    
     NSImage *icon = self.isHighlighted ? self.alternateImage : self.image;
     NSSize iconSize = [icon size];
     NSRect bounds = self.bounds;
@@ -37,7 +32,6 @@
     CGFloat iconY = roundf((NSHeight(bounds) - iconSize.height) / 2);
     NSPoint iconPoint = NSMakePoint(iconX, iconY);
     [icon drawAtPoint:iconPoint fromRect:bounds operation:NSCompositeSourceOver fraction:1];
-    //[icon compositeToPoint:iconPoint operation:NSCompositeSourceOver];
 }
 
 - (id)initWithStatusItem:(NSStatusItem *)statusItem

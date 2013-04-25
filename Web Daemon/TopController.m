@@ -60,12 +60,6 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)updateIcon:(NSImage *)icon
 {
-    /*NSUserNotification* notification = [[NSUserNotification alloc] init];
-    notification.title = @"ICON";
-    notification.subtitle = @"icon";
-    notification.informativeText = @"got icon";
-    notification.userInfo = [NSDictionary dictionaryWithObject:name forKey:@"name"];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];*/
     if([manager updateIcon:icon ofName:name]){
         //manage says yes, we can now change on our side
         [self setIcon:icon];

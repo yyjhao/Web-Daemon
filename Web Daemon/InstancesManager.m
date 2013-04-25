@@ -37,8 +37,11 @@
                 return nil;
             } 
         }
-        specificSettings = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"specific" ofType:@"plist"]];
-        specificAttributes = [NSArray arrayWithObjects:@"smallUserAgent", @"wideUserAgent", @"injectingJS", @"shouldReplaceHost", nil];
+        specificSettings = [NSDictionary
+                            dictionaryWithContentsOfFile:[[NSBundle mainBundle]
+                                                          pathForResource:@"specific"
+                                                          ofType:@"plist"]];
+        specificAttributes = [NSArray arrayWithObjects:@"injectingJS", @"shouldReplaceHost", nil];
         storedFile = [storagePath stringByAppendingPathComponent:@"configs.data"];
         configs = [NSKeyedUnarchiver unarchiveObjectWithFile:storedFile];
         if(configs == nil){
@@ -49,7 +52,9 @@
             [self updateInstance: config];
         }
         [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-        oriPreloadedSettings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"preloaded" ofType:@"plist"]];
+        oriPreloadedSettings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]
+                                                                 pathForResource:@"preloaded"
+                                                                 ofType:@"plist"]];
         _preloadedSettings = [NSMutableArray arrayWithArray:oriPreloadedSettings];
         preloadedSettingsNames = [NSMutableArray new];
         BOOL repeated;

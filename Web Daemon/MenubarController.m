@@ -26,7 +26,6 @@
         _icon = [NSImage imageNamed:@"wdori"];
         [_icon setSize:NSSizeFromString(@"16x16")];
         _statusItemView.alternateImage = _icon;
-        //_grayIcon = [self filterImageToGray:_icon];
         [_grayIcon setSize:NSSizeFromString(@"16x16")];
         _statusItemView.image = _grayIcon;
         _statusItemView.action = @selector(togglePanel:);

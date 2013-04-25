@@ -45,7 +45,7 @@ function wdShowNotification(){
 wdShowNotification();
 setInterval(wdShowNotification, 10000);</string>
 	</dict>
-	<key>m.facebook.com</key>
+	<key>m.facebook.comd</key>
 	<dict>
 		<key>shouldReplaceHost</key>
 		<true/>

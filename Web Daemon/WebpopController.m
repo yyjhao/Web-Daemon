@@ -23,6 +23,9 @@
 @synthesize shouldReloadWhenSwitch;
 @synthesize autoreloadEnabled;
 
+NSString *const WideUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
+NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 like Mac OS X; en-us) AppleWebKit/534.6 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
+
 - (id)initWithDelegate:(id<WebpopControllerDelegate, WDNotificationHandler>)delegate
 {
     self = [super initWithWindowNibName:@"WebpopController"];
@@ -31,8 +34,6 @@
         _delegate = delegate;
         bridge = [[WebToApp alloc] initWithTop:delegate];
         _usingWide = NO;
-        _wideUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
-        _smallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 like Mac OS X; en-us) AppleWebKit/534.6 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
         _shouldReplaceHost = NO;
     }
     return self;
@@ -356,11 +357,11 @@
     [progressInd setDoubleValue:0];
     if(_usingWide && shouldReloadWhenSwitch)
     {
-        [webView setCustomUserAgent:_wideUserAgent];
+        [webView setCustomUserAgent:WideUserAgent];
         NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: wideUrl]];
         [[webView mainFrame] loadRequest:request];
     }else{
-        [webView setCustomUserAgent:_smallUserAgent];
+        [webView setCustomUserAgent:SmallUserAgent];
 
         NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
         [[webView mainFrame] loadRequest:request];

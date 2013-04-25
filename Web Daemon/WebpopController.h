@@ -18,6 +18,8 @@
 #define CLOSE_DURATION .1
 #define RELOAD_INTERVAL 120
 
+
+
 typedef enum{
     loadError,
     loadOK
@@ -70,8 +72,6 @@ typedef enum{
 @property (nonatomic) BOOL usingWide;
 @property (nonatomic) BOOL shouldReloadWhenSwitch;
 @property (nonatomic) BOOL autoreloadEnabled;
-@property NSString* smallUserAgent;
-@property NSString* wideUserAgent;
 @property NSString* injectingJS;
 @property BOOL shouldReplaceHost;
 

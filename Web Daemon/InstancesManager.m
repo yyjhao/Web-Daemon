@@ -37,11 +37,6 @@
                 return nil;
             } 
         }
-        specificSettings = [NSDictionary
-                            dictionaryWithContentsOfFile:[[NSBundle mainBundle]
-                                                          pathForResource:@"specific"
-                                                          ofType:@"plist"]];
-        specificAttributes = [NSArray arrayWithObjects:@"injectingJS", @"shouldReplaceHost", nil];
         storedFile = [storagePath stringByAppendingPathComponent:@"configs.data"];
         configs = [NSKeyedUnarchiver unarchiveObjectWithFile:storedFile];
         if(configs == nil){
@@ -206,26 +201,20 @@
         }
     }
     if(daemon && (!config || ![[config objectForKey:@"enabled"] boolValue])){
+        //disable
         NSLog(@"deleting");
         [daemons removeObjectForKey:name];
         [daemon.webpopController.webView.windowScriptObject setValue:nil forKey:@"WebDaemon"];
         daemon = nil;
     }else if([[config objectForKey:@"enabled"] boolValue] && config && !daemon){
+        //endable
+        NSLog(@"%@",config);
         daemon = [[TopController alloc] initWithConfig:config];
         daemon.manager = self;
-        NSURL* url = [NSURL URLWithString:[config objectForKey:@"smallURL"]];
-        NSDictionary* setting = [specificSettings objectForKey:url.host];
-        if(setting){
-            for(NSString* attribute in specificAttributes){
-                NSString* value = [setting objectForKey:attribute];
-                if(value){
-                    [daemon.webpopController setValue:value forKey:attribute];
-                }
-            }
-        }
         [daemon.webpopController loadWebView];
         [daemons setObject:daemon forKey:name];
     }else{
+        //update
         [daemon updateWithConfig:config];
     }
 }

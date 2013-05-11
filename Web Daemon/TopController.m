@@ -36,6 +36,17 @@
     webpopController.url = [config objectForKey:@"smallURL"];
     webpopController.wideUrl = [config objectForKey:@"wideURL"];
     webpopController.shouldReloadWhenSwitch = [[config objectForKey:@"shouldReloadWhenSwitch"] boolValue];
+    
+    NSString* css = [[config objectForKey:@"injectingCSS"] stringValue];
+    if(css){
+        [webpopController setInjectingCSS: css];
+    }
+    
+    NSString* js = [[config objectForKey:@"injectingJS"] stringValue];
+    if(js){
+        [webpopController setInjectingJS: js];
+    }
+    
     [webpopController awakeFromNib];
     
     self.name = [config objectForKey:@"name"];

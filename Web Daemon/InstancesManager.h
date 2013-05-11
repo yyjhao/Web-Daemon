@@ -13,8 +13,6 @@
     __strong NSString* storedFile;
     NSMutableArray* preloadedSettingsNames;
     NSArray* oriPreloadedSettings;
-    NSDictionary* specificSettings;
-    NSArray* specificAttributes;
     NSString* tmpHost;
 }
 

@@ -73,6 +73,7 @@ typedef enum{
 @property (nonatomic) BOOL shouldReloadWhenSwitch;
 @property (nonatomic) BOOL autoreloadEnabled;
 @property NSString* injectingJS;
+@property NSString* injectingCSS;
 @property BOOL shouldReplaceHost;
 
 -(id)initWithDelegate:(id<WebpopControllerDelegate>)delegate;

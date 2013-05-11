@@ -10,7 +10,7 @@
 	<key>news.ycombinator.com</key>
 	<dict>
 		<key>injectingJS</key>
-		<string>document.querySelector(&apos;table&apos;).width=&apos;100%&apos;; document.querySelector(&apos;body&apos;).style.margin=0;</string>
+		<string>document.addEventListener(&quot;DOMContentLoaded&quot;, function(){document.querySelector(&apos;table&apos;).width=&apos;100%&apos;; document.querySelector(&apos;body&apos;).style.margin=0;});</string>
 	</dict>
 	<key>quora.com</key>
 	<dict>

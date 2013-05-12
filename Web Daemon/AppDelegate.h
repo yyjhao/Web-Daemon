@@ -33,6 +33,8 @@
 @property (weak) IBOutlet NSComboBox *namePicker;
 @property IBOutlet NSNumber* launchAtLogin;
 @property (weak) IBOutlet NSButton *launchAtLoginBut;
+@property (unsafe_unretained) IBOutlet NSTextView *cssField;
+@property (unsafe_unretained) IBOutlet NSTextView *jsField;
 
 - (IBAction)changePref:(id)sender;
 - (IBAction)showCreator:(id)sender;

@@ -48,6 +48,7 @@ typedef enum{
 @interface WebpopController : NSWindowController{
     BOOL _hasActivePop;
     BOOL _usingWide;
+    NSString* _injectingCSS;
     BOOL toReload;
     NSTimer* timer;
     WebToApp* bridge;

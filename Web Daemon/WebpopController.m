@@ -18,7 +18,6 @@
 @synthesize wideUrl;
 @synthesize shouldReloadWhenSwitch;
 @synthesize autoreloadEnabled;
-@synthesize injectingCSS;
 @synthesize injectingJS;
 
 NSString *const WideUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
@@ -60,8 +59,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 
     WebPreferences* pref = [webView preferences];
     [pref setMinimumFontSize:12];
-    [pref setUserStyleSheetEnabled:YES];
-    [pref setUserStyleSheetLocation: [[NSBundle mainBundle] URLForResource:@"userstyle" withExtension:@"css"]];
     [pref _setLocalStorageDatabasePath:storagePath];
     [pref setLocalStorageEnabled:YES];
     [[NSNotificationCenter defaultCenter]
@@ -267,6 +264,17 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     return _usingWide;
 }
 
+- (NSString*)injectingCSS
+{
+    return _injectingCSS;
+}
+
+- (void) setInjectingCSS:(NSString *)injectingCSS
+{
+    _injectingCSS = [[injectingCSS componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+
+}
+
 - (void)setUsingWide:(BOOL)flag
 {
     if(_usingWide != flag){
@@ -355,8 +363,11 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 {
     [windowObject setValue:bridge forKey:@"WebDaemon"];
     if(frame == [webView mainFrame] && frame.dataSource.request.URL.host.length){
-        [webView stringByEvaluatingJavaScriptFromString: [NSString stringWithFormat: @"var s = document.createElement('style'); s.innerHTML='%@'; document.head.appendChild(s);", injectingCSS]];
-        [webView stringByEvaluatingJavaScriptFromString: [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;}, false);%@", @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",injectingJS]];
+        [webView stringByEvaluatingJavaScriptFromString:
+            [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@;}, false);%@",
+                [NSString stringWithFormat: @"var s = document.createElement('style'); s.innerHTML='%@'; document.head.appendChild(s);", _injectingCSS],
+                @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",
+                injectingJS]];
         [_delegate updateStatus:loadOK];
         firstShown = YES;
     }

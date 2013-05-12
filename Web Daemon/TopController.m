@@ -37,12 +37,12 @@
     webpopController.wideUrl = [config objectForKey:@"wideURL"];
     webpopController.shouldReloadWhenSwitch = [[config objectForKey:@"shouldReloadWhenSwitch"] boolValue];
     
-    NSString* css = [[config objectForKey:@"injectingCSS"] stringValue];
+    NSString* css = [config objectForKey:@"injectingCSS"];
     if(css){
         [webpopController setInjectingCSS: css];
     }
     
-    NSString* js = [[config objectForKey:@"injectingJS"] stringValue];
+    NSString* js = [config objectForKey:@"injectingJS"];
     if(js){
         [webpopController setInjectingJS: js];
     }

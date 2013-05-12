@@ -23,6 +23,8 @@
 @synthesize iconView = _iconView;
 @synthesize contextMenu = _contextMenu;
 @synthesize namePicker = _namePicker;
+@synthesize cssField = _cssField;
+@synthesize jsField = _jsField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -149,6 +151,8 @@
     [_autoRefreshBox setState:[[editingConfig objectForKey:@"autoReload"] boolValue]? NSOnState: NSOffState];
     [_createBut setEnabled:YES];
     [_namePicker setEnabled:NO];
+    [_jsField setString: [editingConfig objectForKey: @"injectingJS"]];
+    [_cssField setString: [editingConfig objectForKey: @"injectingCSS"]];
     usingEditor = YES;
     [NSApp beginSheet:_creatorSheet modalForWindow:_window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
@@ -167,6 +171,8 @@
     [_namePicker setStringValue:@""];
     [_smallURLField setStringValue:@""];
     [_wideURLField setStringValue:@""];
+    [_cssField setString: @""];
+    [_jsField setString: @""];
     [_iconView setImage:nil];
     [NSApp endSheet:_creatorSheet];
     [_creatorSheet orderOut:sender];
@@ -194,6 +200,8 @@
         [editingConfig setObject:img forKey:@"icon"];
         [editingConfig setObject:[NSNumber numberWithBool:_autoRefreshBox.state == NSOnState] forKey:@"autoReload"];
         [editingConfig setObject:[NSNumber numberWithBool:_switchPageBox.state == NSOnState] forKey:@"shouldReloadWhenSwitch"];
+        [editingConfig setObject:[_cssField.string copy]  forKey:@"injectingCSS"];
+        [editingConfig setObject:[_jsField.string copy] forKey:@"injectingJS"];
         [manager updateInstance:_namePicker.stringValue];
     }else{
         if([manager.configs objectForKey:_namePicker.stringValue]){
@@ -210,9 +218,11 @@
                                                       img,
                                                       [NSNumber numberWithBool:YES], 
                                                       [NSNumber numberWithBool:_autoRefreshBox.state == NSOnState], 
-                                                      [NSNumber numberWithBool:_switchPageBox.state == NSOnState], 
+                                                      [NSNumber numberWithBool:_switchPageBox.state == NSOnState],
+                                                      _cssField.string,
+                                                      _jsField.string,
                                                       nil]
-                                    forKeys:[[NSArray alloc] initWithObjects:@"name", @"smallURL", @"wideURL", @"icon", @"enabled", @"autoReload", @"shouldReloadWhenSwitch",nil]
+                                    forKeys:[[NSArray alloc] initWithObjects:@"name", @"smallURL", @"wideURL", @"icon", @"enabled", @"autoReload", @"shouldReloadWhenSwitch", "injectingCSS", "injectingJS", nil]
                                     ];
 
         [manager addInstance:ins];

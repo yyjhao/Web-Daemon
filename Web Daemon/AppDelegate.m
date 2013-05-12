@@ -151,8 +151,16 @@
     [_autoRefreshBox setState:[[editingConfig objectForKey:@"autoReload"] boolValue]? NSOnState: NSOffState];
     [_createBut setEnabled:YES];
     [_namePicker setEnabled:NO];
-    [_jsField setString: [editingConfig objectForKey: @"injectingJS"]];
-    [_cssField setString: [editingConfig objectForKey: @"injectingCSS"]];
+    NSString* str = [editingConfig objectForKey: @"injectingJS"];
+    if(str == nil){
+        str = @"";
+    }
+    [_jsField setString: str];
+    str = [editingConfig objectForKey: @"injectingJS"];
+    if(str == nil){
+        str = @"";
+    }
+    [_cssField setString:str];
     usingEditor = YES;
     [NSApp beginSheet:_creatorSheet modalForWindow:_window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }

@@ -156,7 +156,7 @@
         str = @"";
     }
     [_jsField setString: str];
-    str = [editingConfig objectForKey: @"injectingJS"];
+    str = [editingConfig objectForKey: @"injectingCSS"];
     if(str == nil){
         str = @"";
     }

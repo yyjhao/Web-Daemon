@@ -179,7 +179,6 @@ void *kContextActivePanel = &kContextActivePanel;
 
 - (void)dealloc
 {
-    NSLog(@"top is gone");
     self.menuBarController.hasActiveIcon = NO;
     self.webpopController.hasActivePop = NO;
     [webpopController removeObserver:self forKeyPath:@"hasActivePop"];

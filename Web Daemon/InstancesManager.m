@@ -84,7 +84,6 @@
     [listener ignore];
     if(tmpHost){
         NSURL* newURL = [NSURL URLWithString:[[request.URL absoluteString] stringByReplacingOccurrencesOfString:request.URL.host withString:tmpHost]];
-        NSLog(@"%@ %@ %@",newURL,request.URL, [[request.URL absoluteString] stringByReplacingOccurrencesOfString:request.URL.host withString:tmpHost]);
         [[NSWorkspace sharedWorkspace] openURL:newURL];
     }else{
         [[NSWorkspace sharedWorkspace] openURL:[request URL]];
@@ -202,13 +201,11 @@
     }
     if(daemon && (!config || ![[config objectForKey:@"enabled"] boolValue])){
         //disable
-        NSLog(@"deleting");
         [daemons removeObjectForKey:name];
         [daemon.webpopController.webView.windowScriptObject setValue:nil forKey:@"WebDaemon"];
         daemon = nil;
     }else if([[config objectForKey:@"enabled"] boolValue] && config && !daemon){
         //endable
-        NSLog(@"%@",config);
         daemon = [[TopController alloc] initWithConfig:config];
         daemon.manager = self;
         [daemon.webpopController loadWebView];

@@ -54,7 +54,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"menu is gone");
     [[NSStatusBar systemStatusBar] removeStatusItem:_statusItem];
 }
 

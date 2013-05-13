@@ -389,7 +389,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 
 -(void)dealloc
 {
-    NSLog(@"webpop is gone");
     [[webView mainFrame] loadHTMLString: @"" baseURL: nil];
     [webView stopLoading:self];
 }

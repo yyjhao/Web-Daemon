@@ -164,7 +164,7 @@ void *kContextActivePanel = &kContextActivePanel;
     if(_notified){
         _notified = NO;
         if(!self.menuBarController.hasActiveIcon){
-            menuBarController.statusItem.image = menuBarController.grayIcon;
+            menuBarController.statusItemView.image = menuBarController.grayIcon;
         }
     }
 }

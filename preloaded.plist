@@ -3,6 +3,10 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>injectingCSS</key>
+		<string></string>
+		<key>injectingJS</key>
+		<string></string>
 		<key>name</key>
 		<string>Google Plus</string>
 		<key>smallURL</key>
@@ -15,6 +19,10 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>injectingCSS</key>
+		<string></string>
+		<key>injectingJS</key>
+		<string></string>
 		<key>name</key>
 		<string>8tracks</string>
 		<key>smallURL</key>
@@ -27,6 +35,10 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>injectingCSS</key>
+		<string></string>
+		<key>injectingJS</key>
+		<string></string>
 		<key>name</key>
 		<string>Google Tasks</string>
 		<key>smallURL</key>
@@ -39,6 +51,10 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>injectingCSS</key>
+		<string></string>
+		<key>injectingJS</key>
+		<string></string>
 		<key>shouldSwitch</key>
 		<false/>
 		<key>autorefresh</key>
@@ -51,6 +67,16 @@
 		<string>Twitter</string>
 	</dict>
 	<dict>
+		<key>injectingJS</key>
+		<string></string>
+		<key>injectingCSS</key>
+		<string>body{
+    margin: 0;
+}
+
+table{
+    width: 100%;
+}</string>
 		<key>name</key>
 		<string>Hacker News</string>
 		<key>smallURL</key>
@@ -63,6 +89,10 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>injectingCSS</key>
+		<string></string>
+		<key>injectingJS</key>
+		<string></string>
 		<key>name</key>
 		<string>Facebook</string>
 		<key>smallURL</key>

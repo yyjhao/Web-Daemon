@@ -73,10 +73,13 @@
     NSString* name = _namePicker.stringValue;
     for(NSDictionary* item in manager.preloadedSettings){
         if([[item objectForKey:@"name"] isEqualToString:name]){
+            NSLog(@"%@", item);
             _smallURLField.stringValue = [item objectForKey:@"smallURL"];
             _wideURLField.stringValue = [item objectForKey:@"wideURL"];
             _autoRefreshBox.state = [[item objectForKey:@"autorefresh"] integerValue];
             _switchPageBox.state = [[item objectForKey:@"shouldSwitch"] integerValue];
+            _jsField.string = [[item objectForKey: @"injectingJS"] copy];
+            _cssField.string = [[item objectForKey: @"injectingCSS"] copy];
             [_createBut setEnabled:YES];
             return;
         }
@@ -218,19 +221,19 @@
             [alert runModal];
             return;
         }
-        NSMutableDictionary* ins = [[NSMutableDictionary alloc] 
-                                    initWithObjects: [[NSArray alloc] initWithObjects: 
+        NSMutableDictionary* ins = [[NSMutableDictionary alloc]
+                                    initWithObjects: [[NSArray alloc] initWithObjects:
                                                       _namePicker.stringValue,
-                                                      _smallURLField.stringValue, 
-                                                      _wideURLField.stringValue, 
+                                                      _smallURLField.stringValue,
+                                                      _wideURLField.stringValue,
                                                       img,
                                                       [NSNumber numberWithBool:YES], 
                                                       [NSNumber numberWithBool:_autoRefreshBox.state == NSOnState], 
                                                       [NSNumber numberWithBool:_switchPageBox.state == NSOnState],
-                                                      _cssField.string,
-                                                      _jsField.string,
+                                                      [_cssField.string copy],
+                                                      [_jsField.string copy],
                                                       nil]
-                                    forKeys:[[NSArray alloc] initWithObjects:@"name", @"smallURL", @"wideURL", @"icon", @"enabled", @"autoReload", @"shouldReloadWhenSwitch", "injectingCSS", "injectingJS", nil]
+                                    forKeys:[[NSArray alloc] initWithObjects:@"name", @"smallURL", @"wideURL", @"icon", @"enabled", @"autoReload", @"shouldReloadWhenSwitch", @"injectingCSS", @"injectingJS", nil]
                                     ];
 
         [manager addInstance:ins];

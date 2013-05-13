@@ -59,6 +59,8 @@
     
     webpopController.autoreloadEnabled = [[config objectForKey:@"autoReload"] boolValue];
     webpopController.usingWide = [[config objectForKey:@"usingWide"] boolValue];
+    
+    [webpopController loadWebView];
 }
 
 -(WebView*)openNewWindow:(NSURLRequest *)request withHost:(NSString *)host

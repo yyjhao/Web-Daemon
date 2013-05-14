@@ -53,6 +53,7 @@ typedef enum{
     NSTimer* timer;
     WebToApp* bridge;
     BOOL firstShown;
+    NSString *wideHost, *normalHost;
 }
 
 
@@ -67,8 +68,8 @@ typedef enum{
 - (IBAction)toHome:(id)sender;
 - (IBAction)openOut:(id)sender;
 
-@property (retain) NSString* url;
-@property (retain) NSString* wideUrl;
+@property (nonatomic, retain) NSString* url;
+@property (nonatomic, retain) NSString* wideUrl;
 @property (nonatomic) BOOL hasActivePop;
 @property (nonatomic, readonly, weak) id<WebpopControllerDelegate> delegate;
 @property (nonatomic) BOOL usingWide;

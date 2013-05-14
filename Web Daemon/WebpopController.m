@@ -14,8 +14,8 @@
 @synthesize webView;
 @synthesize enlargeBut;
 @synthesize progressInd;
-@synthesize url;
-@synthesize wideUrl;
+@synthesize url = _url;
+@synthesize wideUrl = _wideUrl;
 @synthesize shouldReloadWhenSwitch;
 @synthesize autoreloadEnabled;
 @synthesize injectingJS;
@@ -72,6 +72,36 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
         object:webView];
 }
 
++ (NSString *) trimHost: (NSString *)host
+{
+    NSArray* comps = [host componentsSeparatedByString: @"."];
+    int c = [comps count];
+    if(c > 2){
+        return [NSString stringWithFormat: @"%@.%@", [comps objectAtIndex: c - 2], [comps lastObject]];
+    }else{
+        return host;
+    }
+}
+
+- (void) setWideUrl:(NSString *)wideUrl
+{
+    _wideUrl = [wideUrl copy];
+    wideHost = [WebpopController trimHost: [[NSURL URLWithString: _wideUrl] host]];
+}
+
+- (void) setUrl:(NSString *)url
+{
+    _url = [url copy];
+    normalHost = [WebpopController  trimHost: [[NSURL URLWithString: _url] host]];
+}
+
+- (BOOL) belongToCurrentHost: (NSString *) host
+{
+    if ([host length] == 0)return NO;
+    NSString* thost = [WebpopController  trimHost:host];
+    return [thost isEqualToString: wideHost] || [thost isEqualToString: normalHost];
+}
+
 - (void)webView:(WebView *)sender didReceiveIcon:(NSImage *)image forFrame:(WebFrame *)frame
 {
     if(frame == webView.mainFrame){
@@ -104,14 +134,18 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 {
     NSString* newHost = nil;
     if (bridge.shouldReplaceHost){
-        newHost = [[NSURL URLWithString: wideUrl] host];
+        newHost = [[NSURL URLWithString: _wideUrl] host];
     }
     return [_delegate openNewWindow:request withHost:newHost];
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener
 {
-    if([[actionInformation objectForKey:@"WebActionModifierFlagsKey"] integerValue] & NSCommandKeyMask)
+    NSString* host = [[request URL] host];
+    if(([[actionInformation objectForKey:@"WebActionModifierFlagsKey"] integerValue] & NSCommandKeyMask) ||
+       (host != nil &&
+            frame == [webView mainFrame] &&
+            ![self belongToCurrentHost: host]))
     {
         [listener ignore];
         [[NSWorkspace sharedWorkspace] openURL:request.URL];
@@ -352,12 +386,12 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     if(_usingWide && shouldReloadWhenSwitch)
     {
         [webView setCustomUserAgent:WideUserAgent];
-        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: wideUrl]];
+        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: _wideUrl]];
         [[webView mainFrame] loadRequest:request];
     }else{
         [webView setCustomUserAgent:SmallUserAgent];
 
-        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString: _url]];
         [[webView mainFrame] loadRequest:request];
     }
 
@@ -371,7 +405,7 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
             [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@;}, false);%@",
                 [NSString stringWithFormat: @"var s = document.createElement('style'); s.innerHTML='%@'; document.head.appendChild(s);", _injectingCSS],
 //                @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",
-                    @"",
+                @"",
                 injectingJS]];
         [_delegate updateStatus:loadOK];
         firstShown = YES;
@@ -436,6 +470,6 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 }
 
 - (IBAction)openOut:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:wideUrl]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: _wideUrl]];
 }
 @end

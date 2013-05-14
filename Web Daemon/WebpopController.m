@@ -367,7 +367,8 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
         [webView stringByEvaluatingJavaScriptFromString:
             [NSString stringWithFormat: @"document.addEventListener('DOMContentLoaded', function () {%@;%@;}, false);%@",
                 [NSString stringWithFormat: @"var s = document.createElement('style'); s.innerHTML='%@'; document.head.appendChild(s);", _injectingCSS],
-                @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",
+//                @"[].forEach.call(document.querySelectorAll('a[href^=\"http\"]'),function(elm){if(elm.hostname != location.host){elm.target='_blank';}});if(window.$ && $(document).on){$(document).on('click',function(e){$(e.target).trigger('tap')});}",
+                    @"",
                 injectingJS]];
         [_delegate updateStatus:loadOK];
         firstShown = YES;

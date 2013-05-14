@@ -19,6 +19,7 @@
 @synthesize shouldReloadWhenSwitch;
 @synthesize autoreloadEnabled;
 @synthesize injectingJS;
+@synthesize pageController;
 
 NSString *const WideUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
 NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 like Mac OS X; en-us) AppleWebKit/534.6 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
@@ -52,6 +53,8 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     [webView setPolicyDelegate:self];
     [webView setUIDelegate:self];
     [webView setContinuousSpellCheckingEnabled:YES];
+    
+    [pageController setDelegate: self];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
                                         NSUserDomainMask, YES);
@@ -387,6 +390,34 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
         [frame loadHTMLString:[NSString stringWithFormat:@"<head><title>Error</title><body><h2 class='wd-error-string'>%@</h1>", error.localizedDescription] baseURL:nil];
         [_delegate updateStatus:loadError];
     }
+}
+
+- (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame {
+    if (frame == [sender mainFrame]) {
+        id object = [sender.backForwardList currentItem];
+        BOOL isCurrentItem = self.currentItem && (object == self.currentItem) ? YES : NO;
+        if (!isCurrentItem) {
+            [self.pageController navigateForwardToObject:[sender.backForwardList currentItem]];
+        }
+    }
+}
+
+
+- (void)pageControllerWillStartLiveTransition:(NSPageController *)pageController {
+    self.currentItem = [self.webView.backForwardList currentItem];
+}
+
+- (void)pageController:(NSPageController *)pageController didTransitionToObject:(id)object {
+    BOOL isCurrentItem = self.currentItem && (object == self.currentItem) ? YES : NO;
+    if (!isCurrentItem) {
+        self.currentItem = object;
+        [self.webView goToBackForwardItem:object];
+    }
+}
+
+- (void)pageControllerDidEndLiveTransition:(NSPageController *)pageController {
+    self.currentItem = nil;
+    [pageController completeTransition];
 }
 
 -(void)dealloc

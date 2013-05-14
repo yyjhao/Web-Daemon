@@ -45,7 +45,7 @@ typedef enum{
 
 @end
 
-@interface WebpopController : NSWindowController{
+@interface WebpopController : NSWindowController<NSPageControllerDelegate>{
     BOOL _hasActivePop;
     BOOL _usingWide;
     NSString* _injectingCSS;
@@ -61,6 +61,7 @@ typedef enum{
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSButton *enlargeBut;
 @property (weak) IBOutlet NSProgressIndicator *progressInd;
+@property (unsafe_unretained) IBOutlet NSPageController *pageController;
 
 - (IBAction)changeStyle:(id)sender;
 - (IBAction)toHome:(id)sender;
@@ -76,6 +77,7 @@ typedef enum{
 @property NSString* injectingJS;
 @property NSString* injectingCSS;
 @property BOOL shouldReplaceHost;
+@property (assign) id currentItem;
 
 -(id)initWithDelegate:(id<WebpopControllerDelegate>)delegate;
 
@@ -83,6 +85,5 @@ typedef enum{
 -(void)closePanel;
 -(NSRect)statusrectForWindow:(NSWindow *)window;
 -(void)loadWebView;
--(void)canConnect;
 
 @end

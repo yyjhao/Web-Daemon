@@ -10,22 +10,28 @@
 
 @implementation WebToApp
 
+@synthesize shouldReplaceHost;
 
 +(NSString*)webScriptNameForSelector:(SEL)sel
 {
-    if(sel == @selector(grabAttention))
-    {
+    if(sel == @selector(grabAttention)) {
         return @"grabAttention";
     }else if(sel == @selector(cancelAttention)){
         return @"cancelAttention";
+    }else if(sel == @selector(shouldReplaceHost)){
+        return @"shouldReplaceHost";
+    }else if(sel == @selector(setShouldReplaceHost:)){
+        return @"setShouldReplaceHost";
     }
     return nil;
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
-    if(sel == @selector(grabAttention) || sel == @selector(cancelAttention))
-    {
+    if(sel == @selector(grabAttention) ||
+       sel == @selector(cancelAttention) ||
+       sel == @selector(shouldReplaceHost) ||
+       sel == @selector(setShouldReplaceHost:)) {
         return NO;
     }
     return YES;

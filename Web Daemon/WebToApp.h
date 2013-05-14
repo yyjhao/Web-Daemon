@@ -27,5 +27,6 @@ typedef enum {
 - (void)cancelAttention;
 
 @property (weak) id<WDNotificationHandler> theTop;
+@property BOOL shouldReplaceHost;
 
 @end

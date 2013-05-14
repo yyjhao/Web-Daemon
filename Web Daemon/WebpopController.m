@@ -30,6 +30,7 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
     {
         _delegate = delegate;
         bridge = [[WebToApp alloc] initWithTop:delegate];
+        bridge.shouldReplaceHost = NO;
         _usingWide = NO;
         _shouldReplaceHost = NO;
     }
@@ -99,7 +100,7 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request
 {
     NSString* newHost = nil;
-    if(_shouldReplaceHost){
+    if (bridge.shouldReplaceHost){
         newHost = [[NSURL URLWithString: wideUrl] host];
     }
     return [_delegate openNewWindow:request withHost:newHost];

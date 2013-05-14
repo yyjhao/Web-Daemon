@@ -14,7 +14,6 @@
 		A01EE34A15C431F50008EA5D /* TopController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01EE34915C431F50008EA5D /* TopController.m */; };
 		A01EE34F15C432CC0008EA5D /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = A01EE34E15C432CC0008EA5D /* Panel.m */; };
 		A04C1C5A15C7A396008BB65B /* preloaded.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04C1C5915C7A396008BB65B /* preloaded.plist */; };
-		A04C1C5F15C7FA57008BB65B /* specific.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04C1C5E15C7FA57008BB65B /* specific.plist */; };
 		A061BEB615B8531100072638 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A061BEB515B8531100072638 /* Quartz.framework */; };
 		A07931E315B6E0EE00DF124E /* InstancesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A07931E215B6E0EE00DF124E /* InstancesManager.m */; };
 		A07D850E15CABE0C00147026 /* WebToApp.m in Sources */ = {isa = PBXBuildFile; fileRef = A07D850D15CABE0C00147026 /* WebToApp.m */; };
@@ -75,7 +74,6 @@
 		A01EE34D15C432CC0008EA5D /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
 		A01EE34E15C432CC0008EA5D /* Panel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Panel.m; sourceTree = "<group>"; };
 		A04C1C5915C7A396008BB65B /* preloaded.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = preloaded.plist; path = ../preloaded.plist; sourceTree = "<group>"; };
-		A04C1C5E15C7FA57008BB65B /* specific.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = specific.plist; sourceTree = "<group>"; };
 		A061BEB515B8531100072638 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		A07931E115B6E0EE00DF124E /* InstancesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstancesManager.h; sourceTree = "<group>"; };
 		A07931E215B6E0EE00DF124E /* InstancesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstancesManager.m; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				A0A3DCB215C6875D00FD48BA /* home_icon.png */,
 				A0DED70015E0FCB600C0F304 /* icon.icns */,
 				A081091A15C5870D0084D84D /* Web Daemon-Info.plist */,
-				A04C1C5E15C7FA57008BB65B /* specific.plist */,
 				A0B0C4B215E3B29E000CC027 /* wdori.png */,
 				A0E163C215D68DA300BF39FD /* userstyle.css */,
 				A04C1C5915C7A396008BB65B /* preloaded.plist */,
@@ -314,7 +311,6 @@
 				A01EE33E15C41C260008EA5D /* WebpopController.xib in Resources */,
 				A0A3DCB315C6875D00FD48BA /* home_icon.png in Resources */,
 				A04C1C5A15C7A396008BB65B /* preloaded.plist in Resources */,
-				A04C1C5F15C7FA57008BB65B /* specific.plist in Resources */,
 				A0E163C315D68DA300BF39FD /* userstyle.css in Resources */,
 				A0DED70115E0FCB600C0F304 /* icon.icns in Resources */,
 				A0B0C4B315E3B29E000CC027 /* wdori.png in Resources */,

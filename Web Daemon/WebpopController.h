@@ -2,6 +2,8 @@
 //  WebpopController.h
 //  Web Daemon
 //
+//  Controller for the popview with a webview
+//
 //  Created by Yujian Yao on 28/7/12.
 //
 //
@@ -9,7 +11,6 @@
 #import <Cocoa/Cocoa.h>
 #import "StatusItemView.h"
 #import "PopView.h"
-#import "GradientBackgroundView.h"
 #import <WebKit/WebKit.h>
 #import "WebToApp.h"
 #import <SystemConfiguration/SCNetworkReachability.h>

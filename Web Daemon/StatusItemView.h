@@ -1,9 +1,10 @@
 //
 //  StatusItemView.h
-//  tweb-test
+//  Web Daemon
+//
+//  The icon for each daemon in the statusbar
 //
 //  Created by Yujian Yao on 15/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

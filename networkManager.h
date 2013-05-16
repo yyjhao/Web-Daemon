@@ -2,6 +2,8 @@
 //  networkManager.h
 //  Web Daemon
 //
+//  A manager to inform the app when network becomes accessible or not
+//
 //  Created by Yujian Yao on 15/8/12.
 //
 //

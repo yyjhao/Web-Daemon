@@ -21,7 +21,6 @@
 		A094282A15DBC0B500A14E06 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A094282915DBC0B500A14E06 /* NetworkManager.m */; };
 		A094282D15DBEAB500A14E06 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A094282C15DBEAB500A14E06 /* Reachability.m */; };
 		A094282F15DBEC7600A14E06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094282E15DBEC7600A14E06 /* SystemConfiguration.framework */; };
-		A0A3DCAA15C67BDF00FD48BA /* GradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3DCA915C67BDF00FD48BA /* GradientBackgroundView.m */; };
 		A0A3DCB315C6875D00FD48BA /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A0A3DCB215C6875D00FD48BA /* home_icon.png */; };
 		A0A4BC1615C0481400D0863B /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A4BC1515C0481400D0863B /* StatusItemView.m */; };
 		A0B0C4B315E3B29E000CC027 /* wdori.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0C4B215E3B29E000CC027 /* wdori.png */; };
@@ -30,12 +29,10 @@
 		A0D55D5515B432FA00970905 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D55D5415B432FA00970905 /* Cocoa.framework */; };
 		A0D55D5F15B432FA00970905 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0D55D5D15B432FA00970905 /* InfoPlist.strings */; };
 		A0D55D6115B432FA00970905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D55D6015B432FA00970905 /* main.m */; };
-		A0D55D6515B432FA00970905 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A0D55D6315B432FA00970905 /* Credits.rtf */; };
 		A0D55D6815B432FA00970905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D55D6715B432FA00970905 /* AppDelegate.m */; };
 		A0D55D6B15B432FA00970905 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D55D6915B432FA00970905 /* MainMenu.xib */; };
 		A0D55D7515B4334300970905 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D55D7415B4334300970905 /* WebKit.framework */; };
 		A0DED70115E0FCB600C0F304 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = A0DED70015E0FCB600C0F304 /* icon.icns */; };
-		A0E163C315D68DA300BF39FD /* userstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E163C215D68DA300BF39FD /* userstyle.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +84,6 @@
 		A094282C15DBEAB500A14E06 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A094282E15DBEC7600A14E06 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A094283015DBED4B00A14E06 /* Web Daemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Web Daemon.entitlements"; sourceTree = "<group>"; };
-		A0A3DCA815C67BDF00FD48BA /* GradientBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientBackgroundView.h; sourceTree = "<group>"; };
-		A0A3DCA915C67BDF00FD48BA /* GradientBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientBackgroundView.m; sourceTree = "<group>"; };
 		A0A3DCB215C6875D00FD48BA /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		A0A4BC1415C0481400D0863B /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		A0A4BC1515C0481400D0863B /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
@@ -103,13 +98,11 @@
 		A0D55D5E15B432FA00970905 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0D55D6015B432FA00970905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D55D6215B432FA00970905 /* Web Daemon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Web Daemon-Prefix.pch"; sourceTree = "<group>"; };
-		A0D55D6415B432FA00970905 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A0D55D6615B432FA00970905 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0D55D6715B432FA00970905 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0D55D6A15B432FA00970905 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A0D55D7415B4334300970905 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A0DED70015E0FCB600C0F304 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../icon.icns; sourceTree = "<group>"; };
-		A0E163C215D68DA300BF39FD /* userstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = userstyle.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +141,6 @@
 				A01EE33B15C41C260008EA5D /* WebpopController.m */,
 				A07D850C15CABE0C00147026 /* WebToApp.h */,
 				A07D850D15CABE0C00147026 /* WebToApp.m */,
-				A0A3DCA815C67BDF00FD48BA /* GradientBackgroundView.h */,
-				A0A3DCA915C67BDF00FD48BA /* GradientBackgroundView.m */,
 				A0A4BC1415C0481400D0863B /* StatusItemView.h */,
 				A0A4BC1515C0481400D0863B /* StatusItemView.m */,
 				A01EE34215C424B90008EA5D /* MenubarController.h */,
@@ -228,12 +219,10 @@
 				A0DED70015E0FCB600C0F304 /* icon.icns */,
 				A081091A15C5870D0084D84D /* Web Daemon-Info.plist */,
 				A0B0C4B215E3B29E000CC027 /* wdori.png */,
-				A0E163C215D68DA300BF39FD /* userstyle.css */,
 				A04C1C5915C7A396008BB65B /* preloaded.plist */,
 				A0D55D5D15B432FA00970905 /* InfoPlist.strings */,
 				A0D55D6015B432FA00970905 /* main.m */,
 				A0D55D6215B432FA00970905 /* Web Daemon-Prefix.pch */,
-				A0D55D6315B432FA00970905 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -306,12 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D55D5F15B432FA00970905 /* InfoPlist.strings in Resources */,
-				A0D55D6515B432FA00970905 /* Credits.rtf in Resources */,
 				A0D55D6B15B432FA00970905 /* MainMenu.xib in Resources */,
 				A01EE33E15C41C260008EA5D /* WebpopController.xib in Resources */,
 				A0A3DCB315C6875D00FD48BA /* home_icon.png in Resources */,
 				A04C1C5A15C7A396008BB65B /* preloaded.plist in Resources */,
-				A0E163C315D68DA300BF39FD /* userstyle.css in Resources */,
 				A0DED70115E0FCB600C0F304 /* icon.icns in Resources */,
 				A0B0C4B315E3B29E000CC027 /* wdori.png in Resources */,
 				A0B0C4B515E3BAA9000CC027 /* open_out.png in Resources */,
@@ -334,7 +321,6 @@
 				A01EE34415C424B90008EA5D /* MenubarController.m in Sources */,
 				A01EE34A15C431F50008EA5D /* TopController.m in Sources */,
 				A01EE34F15C432CC0008EA5D /* Panel.m in Sources */,
-				A0A3DCAA15C67BDF00FD48BA /* GradientBackgroundView.m in Sources */,
 				A07D850E15CABE0C00147026 /* WebToApp.m in Sources */,
 				A094282A15DBC0B500A14E06 /* NetworkManager.m in Sources */,
 				A094282D15DBEAB500A14E06 /* Reachability.m in Sources */,
@@ -350,14 +336,6 @@
 				A0D55D5E15B432FA00970905 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A0D55D6315B432FA00970905 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0D55D6415B432FA00970905 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		A0D55D6915B432FA00970905 /* MainMenu.xib */ = {

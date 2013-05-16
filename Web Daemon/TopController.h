@@ -2,6 +2,8 @@
 //  topController.h
 //  Web Daemon
 //
+//  The controller for the popview and the statusbar icon
+//
 //  Created by Yujian Yao on 28/7/12.
 //
 //
@@ -10,7 +12,6 @@
 #import "WebpopController.h"
 #import "MenubarController.h"
 #import "InstancesManager.h"
-#import "GradientBackgroundView.h"
 
 @class InstancesManager;
 

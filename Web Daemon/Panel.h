@@ -1,6 +1,7 @@
 //
 //  Panel.h
-//  tweb-test
+//  Web Daemon
+//  subclass of NSPanel to make sure it can become key window
 //
 //  Created by Yujian Yao on 15/7/12.
 //

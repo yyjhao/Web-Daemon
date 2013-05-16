@@ -3,7 +3,6 @@
 //  Web Daemon
 //
 //  Created by Yujian Yao on 18/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "InstancesManager.h"

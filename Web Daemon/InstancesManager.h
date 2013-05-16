@@ -2,12 +2,15 @@
 //  InstancesManager.h
 //  Web Daemon
 //
+//  Manages all the daemon instances
+//
 //  Created by Yujian Yao on 18/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "TopController.h"
+
+@class TopController;
 
 @interface InstancesManager : NSObject<NSTableViewDataSource, NSUserNotificationCenterDelegate, NSComboBoxDataSource>{
     __strong NSString* storedFile;
@@ -33,7 +36,7 @@
 @property (weak) IBOutlet NSMenu* menu;
 @property (strong, nonatomic, readonly) NSMutableArray* preloadedSettings;
 @property WebView* webviewForOpeningNewWindow;
-@property (weak) NSController* daemonToDisable;
+@property (weak) TopController* daemonToDisable;
 
 -(IBAction)disableDaemon:(id)sender;
 

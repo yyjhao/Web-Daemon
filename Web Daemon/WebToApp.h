@@ -2,6 +2,11 @@
 //  WebToApp.h
 //  Web Daemon
 //
+//  Interface between the webView and the application
+//  Provides a function to grab attention (changing the color of icon and playing a sound)
+//  and to set whether the host of the link should be replaced to the wide version when a
+//  link is to be opened in the browser.
+//
 //  Created by Yujian Yao on 2/8/12.
 //
 //

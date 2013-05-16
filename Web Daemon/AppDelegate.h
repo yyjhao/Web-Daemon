@@ -2,8 +2,9 @@
 //  AppDelegate.h
 //  Web Daemon
 //
+//  Yes the preference window is controlled by this...
+//
 //  Created by Yujian Yao on 16/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

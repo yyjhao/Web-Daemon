@@ -1,9 +1,10 @@
 //
 //  menubarController.h
-//  tweb-test
+//  Web Daemon
+//
+//  The controller for the status bar icons
 //
 //  Created by Yujian Yao on 15/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #define STATUS_ITEM_VIEW_WIDTH 24.0

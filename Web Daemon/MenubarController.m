@@ -1,9 +1,8 @@
 //
 //  menubarController.m
-//  tweb-test
+//  Web Daemon
 //
 //  Created by Yujian Yao on 15/7/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "MenubarController.h"
@@ -73,7 +72,7 @@
     unsigned char *srcData = [srcImageRep bitmapData]; 
     unsigned char *destData = [grayImageRep bitmapData]; 
     unsigned char *p1, *p2; 
-    int n = [srcImageRep bitsPerPixel] / 8; 
+    long n = [srcImageRep bitsPerPixel] / 8;
     
     for ( y = 0; y < h; y++ ) { 
         for ( x = 0; x < w; x++ ) { 
@@ -106,7 +105,7 @@
     unsigned char *srcData = [srcImageRep bitmapData];
     unsigned char *destData = [grayImageRep bitmapData];
     unsigned char *p1, *p2;
-    int n = [srcImageRep bitsPerPixel] / 8;
+    long n = [srcImageRep bitsPerPixel] / 8;
     
     for ( y = 0; y < h; y++ ) {
         for ( x = 0; x < w; x++ ) {
@@ -138,7 +137,7 @@
     unsigned char *srcData = [srcImageRep bitmapData];
     unsigned char *destData = [grayImageRep bitmapData];
     unsigned char *p1, *p2;
-    int n = [srcImageRep bitsPerPixel] / 8;
+    long n = [srcImageRep bitsPerPixel] / 8;
     
     for ( y = 0; y < h; y++ ) {
         for ( x = 0; x < w; x++ ) {

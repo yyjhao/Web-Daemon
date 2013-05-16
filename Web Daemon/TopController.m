@@ -90,7 +90,7 @@ void *kContextActivePanel = &kContextActivePanel;
     int x, y;
     
     unsigned char *srcData = [srcImageRep bitmapData];
-    int n = [srcImageRep bitsPerPixel] / 8;
+    long n = [srcImageRep bitsPerPixel] / 8;
     long r = 0,g = 0,b = 0;
     unsigned char *p1;
     

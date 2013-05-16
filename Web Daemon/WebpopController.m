@@ -75,7 +75,7 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 + (NSString *) trimHost: (NSString *)host
 {
     NSArray* comps = [host componentsSeparatedByString: @"."];
-    int c = [comps count];
+    unsigned long c = [comps count];
     if(c > 2){
         return [NSString stringWithFormat: @"%@.%@", [comps objectAtIndex: c - 2], [comps lastObject]];
     }else{
@@ -281,7 +281,7 @@ NSString *const SmallUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_0 lik
 }
 
 
-- (void)setSize:(NSInteger)w: (NSInteger)h
+- (void)setSize:(NSInteger) w :(NSInteger) h
 {
     NSRect screenRect = [[[NSScreen screens] objectAtIndex:0] frame];
     NSRect statusRect = [self statusrectForWindow:[self window]];

@@ -2,6 +2,9 @@
 //  PopView.h
 //  Web Daemon
 //
+//  Translucent view with a small arrow at the top
+//  The background color can be changed 
+//
 //  Created by Yujian Yao on 28/7/12.
 //
 //

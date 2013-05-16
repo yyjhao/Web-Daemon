@@ -2,8 +2,9 @@
 //  AppDelegate.m
 //  Webdaemon Helper
 //
+//  This helper allows one to make the app start at login
+//
 //  Created by Yujian Yao on 13/8/12.
-//  Copyright (c) 2012 Yujian Yao. All rights reserved.
 //
 
 #import "AppDelegate.h"

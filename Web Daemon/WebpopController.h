@@ -27,6 +27,11 @@ typedef enum{
 } WebpopStatus;
 
 @interface WebPreferences (WebPreferencesPrivate)
+
+/*
+ehem, enabling 'private' API here
+ */
+
 - (void)_setLocalStorageDatabasePath:(NSString *)path;
 - (void) setLocalStorageEnabled: (BOOL) localStorageEnabled;
 @end

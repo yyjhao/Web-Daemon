@@ -269,7 +269,6 @@
 }
 
 - (void)setLaunchAtLogin:(NSNumber *)launchAtLogin{
-	//NSURL *url = [bundleURL URLByAppendingPathComponent:@"Contents/Library/LoginItems/Webdaemon Helper.app"];
     NSURL *url = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"Contents/Library/LoginItems/Webdaemon Helper.app"];
     
 	// Registering helper app

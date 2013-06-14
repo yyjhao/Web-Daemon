@@ -92,7 +92,7 @@ table{
 		<key>injectingCSS</key>
 		<string></string>
 		<key>injectingJS</key>
-		<string></string>
+		<string>WebDaemon.setShouldReplaceHost(true);</string>
 		<key>name</key>
 		<string>Facebook</string>
 		<key>smallURL</key>

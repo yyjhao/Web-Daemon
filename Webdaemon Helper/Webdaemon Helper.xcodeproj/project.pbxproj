@@ -10,7 +10,6 @@
 		A081F41E15D9490600E897ED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A081F41D15D9490600E897ED /* Cocoa.framework */; };
 		A081F42815D9490600E897ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A081F42615D9490600E897ED /* InfoPlist.strings */; };
 		A081F42A15D9490600E897ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A081F42915D9490600E897ED /* main.m */; };
-		A081F42E15D9490600E897ED /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A081F42C15D9490600E897ED /* Credits.rtf */; };
 		A081F43115D9490600E897ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A081F43015D9490600E897ED /* AppDelegate.m */; };
 		A081F43415D9490700E897ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A081F43215D9490700E897ED /* MainMenu.xib */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		A081F42715D9490600E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A081F42915D9490600E897ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A081F42B15D9490600E897ED /* Webdaemon Helper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Webdaemon Helper-Prefix.pch"; sourceTree = "<group>"; };
-		A081F42D15D9490600E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A081F42F15D9490600E897ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A081F43015D9490600E897ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A081F43315D9490700E897ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				A081F42615D9490600E897ED /* InfoPlist.strings */,
 				A081F42915D9490600E897ED /* main.m */,
 				A081F42B15D9490600E897ED /* Webdaemon Helper-Prefix.pch */,
-				A081F42C15D9490600E897ED /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A081F42815D9490600E897ED /* InfoPlist.strings in Resources */,
-				A081F42E15D9490600E897ED /* Credits.rtf in Resources */,
 				A081F43415D9490700E897ED /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,14 +178,6 @@
 				A081F42715D9490600E897ED /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A081F42C15D9490600E897ED /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A081F42D15D9490600E897ED /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		A081F43215D9490700E897ED /* MainMenu.xib */ = {
